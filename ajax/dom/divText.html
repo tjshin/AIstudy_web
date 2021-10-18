@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(){
+            let parentdiv = document.getElementById("textHolder");
+            let divel = document.createElement("div");
+            divel.appendChild(document.createTextNode("CBD Developer 8"));
+            parentdiv.appendChild(divel);
+        }
+
+        function del(){
+            let parentdiv = document.getElementById("textHolder");
+            let divel = parentdiv.firstChild;
+            if (divel != undefined){
+                parentdiv.removeChild(divel);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick = 'show()'>텍스트 추가</button>
+    <button onclick = 'del()'>텍스트 추가</button>
+
+    <div id = 'textHolder'></div>
+</body>
+</html>

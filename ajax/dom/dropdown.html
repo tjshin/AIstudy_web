@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var addressList = ["서울","인천","경기도","강원도"];
+
+
+        var gugunListSeoul = new Array("노원구", "강남구", "구로구", "마포구");
+        var gugunListIncheon = new Array("남동구", "부평구", "서구", "계양구");
+        var gugunListKy = new Array("부천시", "시흥시", "안양시", "수원시");
+
+            // 페이지 로딩시 자동 실행    
+        window.onload = function(){
+            var v_sidoSelect = document.getElementById("sidoSelect"); // SELECT TAG
+            var btnArea = document.getElementById("btnArea");
+                
+            for (i =0 ; i<addressList.length; i++){// 0 ~ 3   
+                // 새로운 <option value=''>값</option> 태그 생성
+                var optionEl = document.createElement("option");
+            
+                // option태그에 value 속성 값으로 저장
+                optionEl.value = addressList[i];
+                
+                // text 문자열을 새로 생성한 <option> 태그의 값으로 추가
+                optionEl.appendChild (document.createTextNode(addressList[i]));
+                
+                // 만들어진 option 태그를 <select>태그에 추가
+                v_sidoSelect.appendChild(optionEl);
+            }
+            
+            var v_gugunSelect = document.getElementById("gugunSelect"); // SELECT TAG
+            v_gugunSelect.style.display = "none";  // 태그 감추기
+            btnArea.style.display = "none";  // 태그 감추기
+            
+    }
+    
+    // 대분류 선택시
+    function changeSidoSelect(){
+        var v_sidoSelect = document.getElementById("sidoSelect"); // SELECT TAG
+        var idx = v_sidoSelect.options.selectedIndex;     // 선택값 0 ~ 3
+        var area = document.getElementById("area"); // 태그 검색
+            
+        area.value = "";
+        gugunSelectFill(idx);   // 중분류 생성
+    }
+    
+    
+    function gugunSelectFill(idx){
+        var v_gugunSelect = document.getElementById("gugunSelect"); // SELECT TAG
+        var btnArea = document.getElementById("btnArea");
+        var data = null;
+        
+        if (idx == 0) { 
+            v_gugunSelect.style.display = "none";  // 중분류 태그 감추기
+            btnArea.style.display = "none";
+            return;
+        }
+        
+        if (idx == 1){ data = gugunListSeoul }
+        if (idx == 2){ data = gugunListIncheon }
+        if (idx == 3){ data = gugunListKy }
+        
+        if (idx == 4){
+            v_gugunSelect.style.display = "none"; 
+            alert("현재는 지원하지 않습니다.");
+            return; 
+        }
+    
+        v_gugunSelect.innerHTML = "";  // 태그 출력
+            
+        for (i =0 ; i<data.length; i++){   
+            // 새로운 <option value=''>값</option> 태그 생성
+            var optionEl = document.createElement("option");
+        
+            // value 속성 태그에 저장
+            optionEl.value = data[i];
+            
+            // text 문자열을 새로 생성한 <option> 태그에 추가
+            optionEl.appendChild (document.createTextNode(data[i]));
+            
+            // 만들어진 option 태그를 <select>태그에 추가
+            v_gugunSelect.appendChild(optionEl);
+        }
+        
+        v_gugunSelect.style.display = "";  // 중분류 태그 출력                     
+        btnArea.style.display = "";        // 선택 버튼 태그
+        
+    }
+    
+    // 선택한 지역을 가져옵니다.    
+    function getArea(){
+        var area = document.getElementById("area"); // 태그 검색
+        var sidoSelect = document.getElementById("sidoSelect");
+        var gugunSelect = document.getElementById("gugunSelect");
+        alert(sidoSelect.value + " " + gugunSelect.value); // 선택값의 출력
+        
+        area.value = sidoSelect.value + " " + gugunSelect.value;
+        
+    }
+    </script>
+</head>
+<body>
+    <div id="sido">
+        <select id="sidoSelect" onChange="changeSidoSelect();">
+            <option value="">대분류를 선택하세요.</option>
+        </select>
+        
+        <select id="gugunSelect">
+            <option value="">중분류 선택하세요.</option>
+        </select>
+     
+        <label> 
+        <input type="button" id="btnArea" name="btnArea" value="선택" onClick="getArea()">
+        선택한 지역: 
+        <input type="text" id="area" size="40">
+        </label>
+    </div>
+</body>
+</html>

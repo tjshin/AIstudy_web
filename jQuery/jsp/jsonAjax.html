@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style></style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+    $.ajax({
+                url: "./test.jsp",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                    // result = jQuery.parseJSON(data);
+                    result = data;
+                    console.log('Call Back Call: ' + result.name);
+                    $("#panel").append(
+                        "<tr>" +
+                        "<td>이름</td>" +
+                        "<td>아이디</td>" +
+                        "<td>국어</td>" +
+                        "<td>영어</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                        "<td>" + result.name + "</td>" +
+                        "<td>" + result.id + "</td>" +
+                        "<td>" + result.kuk + "</td>" +
+                        "<td>" + result.eng + "</td>" +
+                        "</tr>"
+                    );
+                },
+                statusCode: {
+                    404: function () {
+                        alert("page not found");
+                    },
+                    500: function () {
+                        alert("page error");
+                    }
+                }
+            });
+});
+</script>
+<style>
+    td {
+        border: 1px solid gray;
+    }
+</style>
+</head>
+<body>
+    <!-- 테이블로 출력 -->
+    <table id="panel"></table>
+</body>
+</html>

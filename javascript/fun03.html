@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: gulim;
+            font-size: 22px;
+        } 
+    </style>
+    <script>
+        function adding(x, y){
+            let z = x + y;
+            return z;
+        }
+        function pl(str){
+            document.write(`${str} <br>`);
+        }
+    </script>
+</head>
+<body>
+    <h1>함수의 사용예 3</h1>
+    <script>
+        let a = 10;
+        let b = 20;
+        let c = adding(a, b);
+        pl(`두 변수의 합은 ${c}`);
+
+        a = '맨큐의 경제학';
+        b = '<br> 이것이 자바다';
+        c = adding(a, b);
+        pl(`두 변수의 합은 ${c}`);
+    </script>
+</body>
+</html>

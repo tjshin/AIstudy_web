@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: gulim;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <H2>switch 문의 사용</H2>
+    <HR>
+
+    <script type="text/javascript">
+
+        // 사용자로 부터 값을 입력 받는데 사용
+        temp = prompt("현재의 계절을 입력하세요?\n(봄, 여름, 가을, 겨울)", "가을");
+
+        switch (temp) {
+            case "spring": // JDK 1.7부터 문자열 비교 가능하나 1.6을 많이 사용함으로 권장은 아님
+                document.write("봄이군요. 날씨가 따뜻하네요");
+                break;
+            case "summer":
+                document.write("여름이군요. 날씨가 무척 덥네요");
+                break;
+            case "가을":
+                document.write("가을이군요. 날씨가 시원하네요");
+                break;
+            case "겨울":
+                document.write("겨울이군요. 날씨가 매우 춥네요");
+                break;
+            default:
+                document.write("알수없는 단어입니다.");
+        }
+    </script>
+
+</body>
+
+</html>

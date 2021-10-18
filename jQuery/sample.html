@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title></title>
+<style>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+</style>
+<script src='https://code.jquery.com/jquery-3.5.0.js'></script>
+<script>
+$(function () {
+});
+</script>
+</head>
+<body>
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+    <hr>
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+    <hr>
+    <p>Hello</p>
+    <p>cruel</p>
+    <p>World</p>
+    <script>
+    $( "p" ).slice(0,3).wrap( "<div></div>" );
+    $( "p" ).slice(3,6).wrapAll( "<div></div>" );
+    $( "p" ).slice(6,10).wrapInner( "<b></b>" );
+    </script>
+     
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+    function daum(){
+        // 다음주소 추가
+        document.getElementById('url').value = "http://www.daum.net";
+    }
+    function kisang(){
+        // 기상청 주소
+        document.getElementById('url').value = "https://www.weather.go.kr";
+    }
+    function kyobo(){
+        // 교보문고 주소
+        document.getElementById('url').value = "http://www.kyobobook.co.kr/";
+    }
+    function sendit(){
+            let str = document.getElementById('url').value; //id로 검색
+            // console.log('str:::',str);
+            
+            if(str == ''){
+                alert('주소를 입력하세요');
+                document.regiform.url.focus(); // name으로 속성 검색
+            }
+            else if(!str.includes("http://")){
+                // alert("앞에 http://를 추가하시오");
+                str = "http://".concat(str);
+                location.href = str;
+                console.log("strxx::",str)
+            }
+            else{
+                location.href = str; // 주소 요청
+                console.log("stroo::",str)
+            }
+    }
+    </script>
+</head>
+<body>
+    <form name='regiform'>
+        <input type='text' id ='url' name='url' size='50'>
+        <!-- <a href="javascript:sendit();">주소이동</a> -->
+        <button type="button" onclick="sendit()"> 주소이동 </button> <br> <br>
+        <button type="button" onclick="daum()">다음</button>
+        <button type="button" onclick="kisang()">기상청</button>
+        <button type="button" onclick="kyobo()">교보문고</button>
+   
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+    <meta charset="utf-8">
+    <title>insertBefore demo</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script type="text/javascript">
+       function requestCheck() {
+            let param = $("#frmSungjuk").serialize();
+            console.log(param);
+            $.post(
+                "./get.jsp",
+                param,
+                function (data) {
+                    console.log(data);
+                    result = data;
+                    console.log('Call Back Call: ' + result.name);
+                    display();
+                },"json").
+                    fail(function(){
+                    alert('error');
+                });
+        }
+        function display(){
+            $("#panel").text("");
+            $("#panel").append(
+                    " 성명: " + result.name+
+                    " 국어: " + result.kuk+
+                    " 영어: " + result.eng+
+                    " 총점: " + result.tot+
+                    " 평균: " + result.avg
+            );        
+        }
+    </script>
+    <style>
+        td {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+ 
+<body>
+ 
+    <div id="panel" align="center"></div>
+    <hr>
+    <form id="frmSungjuk">
+        성명: <input type="text" name="name"  value='가길동'/><br/>
+        국어: <input type="text" name="kuk"  value='80'/><br/>
+        영어: <input type="text" name="eng"  value='100'/><br/><br/>
+    
+        <button type="button" onclick='requestCheck()'>성적계산</button>  
+    
+    </form>
+ 
+</body>
+ 
+</html>

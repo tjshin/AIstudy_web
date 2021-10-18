@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <H2>JSON Object Creation in JavaScript</H2>
+    <p id='demo'></p>
+
+    <script>
+        let text = '{"name":"John","street":"Oslo West","phone":"111 11111"}';
+        console.log(typeof(text));
+        let obj = JSON.parse(text); //문자열을 객체로 변환
+        console.log(typeof(obj));
+        document.getElementById('demo').innerHTML = 
+        obj.name + '<br>' +
+        obj.street + '<br>' +
+        obj.phone;
+
+        let text2 = JSON.stringify(obj); //객체를 문자열로 변환
+        console.log(typeof(text2));
+
+
+    </script>
+</body>
+</html>

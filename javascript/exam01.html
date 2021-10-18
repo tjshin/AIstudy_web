@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: gulim;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>성적 처리</h2>
+    <hr>
+    <script>
+        let kuk = prompt('국어 점수 입력', 0);
+        let eng = prompt('영어 점수 입력', 0);
+        let mat = prompt('수학 점수 입력', 0);
+
+        let tot = parseInt(kuk) + parseInt(eng) + parseInt(mat);
+        let avg = tot / 3;
+
+        let star = '';
+        for (let i = 1; i <= avg / 10; i++) {
+            star += '★';
+        }
+
+        document.write("<TABLE width='50%' border='1'>");
+        document.write('<tr><th>점수</th></tr>');
+        document.write(`<TR><TD>국어:${kuk}</TD></TR>`);
+        document.write(`<TR><TD>영어:${eng}</TD></TR>`);
+        document.write(`<TR><TD>수학:${mat}</TD></TR>`);
+        document.write(`<TR><TD>총점:${tot}</TD></TR>`);
+        document.write(`<TR><TD>평균:${avg}</TD></TR>`);
+        document.write(`<TR><TD>평가:${star}</TD></TR>`);
+        document.write('</TABLE>');
+
+    </script>
+</body>
+
+</html>

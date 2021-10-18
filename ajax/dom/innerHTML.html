@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function setDiv(){
+            var str = "<table><tr bgcolor='#00ff00'>";
+            str = str + "<td width='500' height='200' align='center' valign='middle'>";
+            str = str + "<font color='#ff0000' size='5'>";
+        
+            str = str + "A0001 - 컴퓨터 A<br>";
+            str = str + "A0002 - 컴퓨터 B<br>";
+            str = str + "A0003 - 컴퓨터 C<br>";
+            str = str + "A0004 - 컴퓨터 D<br>";
+            str = str + "</font>";
+            str = str + "</td></tr></table>";
+            
+            document.getElementById("div1").innerHTML = str;
+
+        }
+
+        function delDiv(){
+            let str = '*****';
+            document.getElementById("div1").innerHTML = str;
+        }
+    </script>
+</head>
+<body>
+    <div id = 'div1'>*****</div><br>
+    <button onclick = 'setDiv()'> 테이블 생성 </button>
+    <button onclick = 'delDiv()'> 테이블 삭제 </button>
+</body>
+</html>

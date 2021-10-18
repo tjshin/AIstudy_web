@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: gulim;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <H2>제어구조의 중첩</H2>
+    <HR>
+    <TABLE BORDER="1" cellspacing="0" cellpadding="2">
+        <TR>
+            <script>
+                let i, j, result
+
+                for (i = 2; i <= 9; i++) {
+                    p("<td align = 'center' bgcolor='#eeeeee'>");
+                    p(`${i} 단`);
+                    p('</td>');
+                }
+                p('</tr>');
+                p('<tr>');
+
+                for (i = 2; i <= 9; i++) {
+                    p('<td>');
+                    for (j = 1; j <= 9; j++) {
+                        result = i * j;
+                        p(`${i} × ${j} = ${result} <br>`);
+                    }
+                    p('</td>');
+                }
+
+                function p(str) {
+                    document.write(str);
+                }
+
+                function pl(str) {
+                    document.write(str + "<br>");
+                }
+            </script>
+        </TR>
+    </TABLE>
+</body>
+
+</html>

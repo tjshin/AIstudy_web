@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: gulim;
+            font-size: 22px;
+        }
+    </style>
+    <script>
+        function check(f){
+            if(r1.row.value == ''){
+                alert('행의 수를 입력하세요');
+                r1.row.focus();
+            }else if(c1.col.value == ''){
+                alert('열의 수를 입력하세요');
+                c1.col.focus();
+            }else if(r1.row.value < 3 ||r1.row.value > 10){
+                alert('3 ~ 10 의 숫자만 입력하세요');
+                r1.row.focus();
+            }else if(c1.col.value < 3 ||c1.col.value > 10){
+                alert('3 ~ 10 의 숫자만 입력하세요');
+                c1.col.focus();
+            }else if((typeof r1.row.value) != 'number'){
+                alert('숫자만 입력하세요');
+                r1.row.focus();
+            }else if((typeof c1.col.value) != 'number'){
+                alert('숫자만 입력하세요');
+                c1.col.focus();
+            }else{
+                alert('데이터 정상 입력, 계속 진행합니다.');
+            }
+        }
+
+
+        function makeTable(r1, c1){
+            var tag = "<table border = '1'>";
+            var r2 = parseInt(r1);
+            var c2 = parseInt(c1);
+            for (i = 1 ; i <= r2 ; i++){
+                tag += '<tr>';
+                    for (j =1 ; j <= c2 ; j++){
+                        tag += '<td>' + i + '.' + j + '</td>';
+                    }        
+                tag += '</tr>';
+            }
+            tag += '</table>';
+            panel.innerHTML = tag;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        행의수: <input type = 'text' name = 'row' id = 'row'><br>
+        열의수: <input type = 'text' name = 'col' id = 'col'><br>
+        <button onclick = 'check(makeTable(row.value, col.value))'>입력</button>
+    </form>
+    <div id = 'panel'></div>
+    
+</body>
+</html>

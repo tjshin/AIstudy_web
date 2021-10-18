@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            document.getElementById("chkLCD").checked = true;
+        }
+
+        function uncheck(){
+            document.getElementById("chkLCD").checked = false;
+        }
+
+        function check2(id){
+            document.getElementById(id).checked = true;
+        }
+
+        function uncheck2(id){
+            document.getElementById(id).checked = false;
+        }
+
+        function getOption(){
+            var lcd = document.getElementById("chkLCD"); // 태그 검색
+    var ram = document.getElementById("chkRAM"); // 태그 검색
+    var printer = document.getElementById("chkPrinter"); // 태그 검색
+    var str = "";
+    
+    if (lcd.checked == true){ 
+        str = lcd.value + "   ";
+    }   
+ 
+    if (ram.checked == true){ 
+        str = str + ram.value + "   ";
+    }   
+ 
+    if (printer.checked == true){ 
+        str = str + printer.value;
+    }   
+        
+    // alert(str); // 선택값의 출력
+    document.getElementById('opt').value = str;
+
+        }
+
+    </script>
+</head>
+<body>
+    <form>
+        <p>상품 옵션 선택 </p>
+        <p>
+          <input type="checkbox" id="chkLCD" value="LCD 24" />
+          <input type="button" onClick="check()" value="LCD 24' 선택" />
+          <input type="button" onClick="uncheck()" value="LCD 24' 선택 안함 " />
+          </p>
+        <p>
+          <input type="checkbox" id="chkRAM" value="RAM 2G" />
+          <input type="button" onClick="check2('chkRAM')" value="RAM 2G 선택" />
+          <input type="button" onClick="uncheck2('chkRAM')" value="RAM 2G 선택 안함 " />
+          </p>
+        <p>
+          <input type="checkbox" id="chkPrinter" value="프린터" />
+          <input type="button" onClick="check2('chkPrinter')" value="프린터 선택" />
+          <input type="button" onClick="uncheck2('chkPrinter')" value="프린터 선택 안함 " />
+          </p>        
+          <p>
+         <input type="button" name="btnOpt" value="선택한 옵션" onClick="getOption()">
+         <input type="text" id="opt" size="40">
+          </p>
+      </form>
+</body>
+</html>

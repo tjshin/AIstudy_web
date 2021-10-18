@@ -1,0 +1,27 @@
+INDEX VERSION 1.131
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3999936480.index
+\jsptest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2726629984.index
+\suggest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3703758790.index
+\jsptest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2066597364.index
+\webtest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2363726341.index
+\webtest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\838881979.index
+\webtest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1508366499.index
+\suggest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3225701585.index
+\jsptest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1521234108.index
+\webtest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\412564270.index
+\webtest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3511560534.index
+\jsptest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3491506472.index
+\jsptest\src\main\java
+C:\AIstudy\web\jsp\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3595677967.index
+\jsptest\src\main\java
